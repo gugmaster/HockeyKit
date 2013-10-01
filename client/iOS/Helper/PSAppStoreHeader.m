@@ -109,16 +109,16 @@
   
   
   [mainTextColor set];
-  [headerLabel_ drawInRect:CGRectMake(kTextRow, kImageMargin, globalWidth-kTextRow, 20) withFont:mainFont lineBreakMode:UILineBreakModeTailTruncation];
+  [headerLabel_ drawInRect:CGRectMake(kTextRow, kImageMargin, globalWidth-kTextRow, 20) withFont:mainFont lineBreakMode:NSLineBreakByTruncatingTail];
   
   // middle
   [secondaryTextColor set];
-  [middleHeaderLabel_ drawInRect:CGRectMake(kTextRow, kImageMargin + 25, globalWidth-kTextRow, 20) withFont:secondaryFont lineBreakMode:UILineBreakModeTailTruncation];
+  [middleHeaderLabel_ drawInRect:CGRectMake(kTextRow, kImageMargin + 25, globalWidth-kTextRow, 20) withFont:secondaryFont lineBreakMode:NSLineBreakByTruncatingTail];
   CGContextSetShadowWithColor(context, CGSizeZero, 0, nil);
   
   // sub
   [secondaryTextColor set];
-  [subHeaderLabel drawAtPoint:CGPointMake(kTextRow, kImageMargin+kImageHeight-12) forWidth:globalWidth-kTextRow withFont:smallFont lineBreakMode:UILineBreakModeTailTruncation];
+  [subHeaderLabel drawAtPoint:CGPointMake(kTextRow, kImageMargin+kImageHeight-12) forWidth:globalWidth-kTextRow withFont:smallFont lineBreakMode:NSLineBreakByTruncatingTail];
   
   CGColorRelease(myColor);
   CGColorSpaceRelease(myColorSpace);
