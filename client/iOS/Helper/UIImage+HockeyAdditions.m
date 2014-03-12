@@ -33,7 +33,7 @@
 
 @implementation UIImage (HockeyAdditions)
 
-CGContextRef MyOpenBitmapContext(int pixelsWide, int pixelsHigh);
+CGContextRef MyOpenBitmapContext(CGFloat pixelsWide, CGFloat pixelsHigh);
 CGImageRef CreateGradientImage(int pixelsWide, int pixelsHigh, float fromAlpha, float toAlpha);
 
 // Returns true if the image has an alpha layer
@@ -274,7 +274,7 @@ CGImageRef CreateGradientImage(int pixelsWide, int pixelsHigh, float fromAlpha, 
   return theCGImage;
 }
 
-CGContextRef MyOpenBitmapContext(int pixelsWide, int pixelsHigh) {
+CGContextRef MyOpenBitmapContext(CGFloat pixelsWide, CGFloat pixelsHigh) {
   CGSize size = CGSizeMake(pixelsWide, pixelsHigh);
   if (UIGraphicsBeginImageContextWithOptions != NULL) {
     UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
@@ -286,7 +286,7 @@ CGContextRef MyOpenBitmapContext(int pixelsWide, int pixelsHigh) {
   return UIGraphicsGetCurrentContext();
 }
 
-- (UIImage *)bw_reflectedImageWithHeight:(NSUInteger)height fromAlpha:(float)fromAlpha toAlpha:(float)toAlpha {
+- (UIImage *)bw_reflectedImageWithHeight:(CGFloat)height fromAlpha:(CGFloat)fromAlpha toAlpha:(CGFloat)toAlpha {
   if(height == 0)
 		return nil;
   

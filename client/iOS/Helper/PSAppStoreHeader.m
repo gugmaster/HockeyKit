@@ -91,7 +91,7 @@
   UIFont *secondaryFont = [UIFont boldSystemFontOfSize:12];
   UIFont *smallFont = [UIFont systemFontOfSize:12];
   
-  float myColorValues[] = {255, 255, 255, .6};
+  CGFloat myColorValues[] = {255, 255, 255, .6};
   CGColorSpaceRef myColorSpace = CGColorSpaceCreateDeviceRGB();
   CGColorRef myColor = CGColorCreate(myColorSpace, myColorValues);
   

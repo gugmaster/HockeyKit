@@ -979,10 +979,10 @@ static NSString *kHockeyErrorDomain = @"HockeyErrorDomain";
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
   if ([response respondsToSelector:@selector(statusCode)]) {
-    int statusCode = [((NSHTTPURLResponse *)response) statusCode];
+    NSInteger statusCode = [((NSHTTPURLResponse *)response) statusCode];
     if (statusCode == 404) {
       [connection cancel];  // stop connecting; no more delegate messages
-      NSString *errorStr = [NSString stringWithFormat:@"Hockey API received HTTP Status Code %d", statusCode];
+      NSString *errorStr = [NSString stringWithFormat:@"Hockey API received HTTP Status Code %ld", (long)statusCode];
       [self connectionClosed_];
       [self reportError_:[NSError errorWithDomain:kHockeyErrorDomain code:HockeyAPIServerReturnedInvalidStatus userInfo:
                           [NSDictionary dictionaryWithObjectsAndKeys:errorStr, NSLocalizedDescriptionKey, nil]]];
